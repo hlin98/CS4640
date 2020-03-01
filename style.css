@@ -1,0 +1,20 @@
+.container{
+    margin-top: 2%;
+}
+
+#searchform{
+    z-index:99 !important;
+    position:relative;
+  }
+
+.btn-secondary{
+background-color: #363635;
+border-color: #363635;
+color:#BCE7D5;
+-o-transition:.5s;
+-ms-transition:.5s;
+-moz-transition:.5s;
+-webkit-transition:.5s;
+transition:.5s;
+font-family: 'Fredoka One';
+}
