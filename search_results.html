@@ -3,6 +3,8 @@
 <head>
     <title>Search Results</title>
     <link href="style.css" rel="stylesheet">
+    <script type="text/javascript" src="jquery-3.3.1.js"></script>
+    <script src="script.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -36,7 +38,7 @@
       </nav>
 
       <div class="container">
-      <form class="form-inline justify-content-center" id="searchform" method = "GET" action = "#" >
+      <form class="form-inline justify-content-center" id="searchform" method = "GET" action = "#recipes" >
         <input class="form-control mr-sm-5 search" id="query" name="query"  type="text" placeholder="Search a recipe or type of food" size="100">
         <button class="btn btn-secondary type="submit"><i class="material-icons">search</i></button>
         <div class="filter" id="form1">
@@ -83,14 +85,14 @@
                         <img src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F6569085.jpg" class="float-left" alt="">
                     </div>
                     <div class = "col-md-5">
-                        <h2>Grilled Lemon Salmon</h2>
+                        <a href="#"><h2>Grilled Lemon Salmon</h2></a>
                         <p> Selinie Wang</p>
                         <p>Prep Time: 1 hour</p>
                         <p>Level of difficulty: Intermediate</p>
                     </div>
                     <div class = "col-md-2">
                         <h2></h2>
-                        <button class="like-button"> <i class="fa fa-heart" style="font-size:30px;color:red"></i> </button>
+                        <button class="like-button" id="like-button" onclick="likeButton('like-button')"> <i class="fa fa-heart" style="font-size:30px;"></i> </button>
                         <p> Rating: 4/5</p>
                     </div>
 
@@ -103,14 +105,14 @@
                         <img src="https://www.emilieeats.com/wp-content/uploads/2016/12/easy-quinoa-salad-with-tomatoes-spinach-beans-vegan-gluten-free-square.jpg" class="float-left" alt="">
                     </div>
                     <div class = "col-md-5">
-                        <h2>Tomato Quinoa Salad</h2>
+                        <a href="#"><h2>Tomato Quinoa Salad</h2></a>
                         <p> Jenny Yao</p>
                         <p>Prep Time: 30 mins</p>
                         <p>Level of difficulty: Beginner</p>
                     </div>
                     <div class = "col-md-2">
                         <h2></h2>
-                        <button class="like-button"> <i class="fa fa-heart" style="font-size:30px;color:red"></i> </button>
+                        <button class="like-button" id="like-button" onclick="likeButton('like-button')";> <i class="fa fa-heart" style="font-size:30px;"></i> </button>
                         <p> Rating: 4/5</p>
                     </div>
 
