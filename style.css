@@ -2,10 +2,19 @@
     margin-top: 2%;
 }
 
+form{
+    background-color: #E1E1E1;
+    padding: 2%;
+}
+
 #searchform{
     z-index:99 !important;
     position:relative;
   }
+
+.filter-form{
+    margin-top: 3%;
+}
 
 .btn-secondary{
 background-color: #363635;
