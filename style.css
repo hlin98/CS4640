@@ -38,6 +38,19 @@ img{
 .like-button{
     border-style: none;
     margin-bottom: 100%;
+    color: gray;
+    outline: none;
+    
+}
+
+.like-button:hover{
+    color: red;
+    outline: none;
+}
+
+.like-button:active{
+    color: red;
+    outline: none;
 }
 
 div.col-md-3.recipe-image{
