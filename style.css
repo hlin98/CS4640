@@ -1,0 +1,51 @@
+.container{
+    margin-top: 2%;
+}
+
+#searchform{
+    z-index:99 !important;
+    position:relative;
+  }
+
+.btn-secondary{
+background-color: #363635;
+border-color: #363635;
+color:#BCE7D5;
+-o-transition:.5s;
+-ms-transition:.5s;
+-moz-transition:.5s;
+-webkit-transition:.5s;
+transition:.5s;
+font-family: 'Fredoka One';
+}
+.vertical-align {
+    display: flex;
+    align-items: center;
+}
+.row{
+    border: 1px solid #CEC7C7;
+    padding:0 px;
+}
+
+img{
+    display: list-item;
+    height: 230px;
+    margin-right: 5%;
+    border-radius: 4px;
+    width: 250px;
+}
+
+.like-button{
+    border-style: none;
+    margin-bottom: 100%;
+}
+
+div.col-md-3.recipe-image{
+    padding: 0px;
+}
+
+div.col-md-2{
+    text-align: right;
+    margin-right: 0px;
+    margin-left: 15%;
+}
