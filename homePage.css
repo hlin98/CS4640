@@ -1,0 +1,59 @@
+/* -----STANDARD CSS------ */
+*{
+  margin: 0;
+  font-family: 'Nunito';
+}
+*:focus {
+    outline: none;
+}
+body {
+  background: url(background.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+header{
+  background: #E05028;
+  text-align: center;
+}
+/* -----STANDARD CSS------ */
+
+
+.banner{
+  text-align: center;
+  color: white;
+  padding: 20px 0 20px 0;
+}
+.banner-text{
+  font-size: 20px;
+  margin: 0;
+}
+
+.container{
+  align-content: center;
+}
+.quote{
+  text-align: center;
+  margin: 200px 0 50px 0;
+  color: white;
+}
+.form-group{
+  margin: 0 50px 0 50px;
+}
+.form-control{
+  height:calc(1.5em + 1.75rem + 2px);
+  font-size: 1.25rem;
+  border-radius: 1.75rem;
+  padding: .375rem 1.75rem;
+  width: 100%;
+
+}
+.buttons{
+  margin-top: 50px;
+  text-align: center;
+}
+.btn-primary{
+  background-color: #E05028;
+  border-color: white;
+}
