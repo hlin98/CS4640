@@ -5,16 +5,17 @@
     <link href="style.css" rel="stylesheet">
     <script type="text/javascript" src="jquery-3.3.1.js"></script>
     <script src="script.js"></script>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/fa27627a5d.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
 </head>
 <body>
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Easy bites</a>
+	<nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+        <a class="navbar-brand" href="#">LOGO</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -39,66 +40,83 @@
 
       <div class="container">
       <form class="form-inline justify-content-center" id="searchform" method = "GET" action = "#recipes" >
-        <input class="form-control mr-sm-5 search" id="query" name="query"  type="text" placeholder="Search a recipe or type of food" size="100">
-        <button class="btn btn-secondary type="submit"><i class="material-icons">search</i></button>
+        <div class="input-wrapper">
+        <input class="form-control mr-sm-5 search" id="query" name="query"  type="text" placeholder= "Search for Cheese Cake" size="80">
+        </div>
         <div class="filter" id="form1">
         <!--{% csrf_token %}-->
         <div class="form-row filter-form">
           <div class="form-group col-md-3">
             <label for="inputState">Prep Time</label>
-            <select name="type" id="inputState" class="form-control">
-              <option selected>All</option>
-              <option>&lt; 30 mins</option>
-              <option>&lt; 1 hour</option>
-              <option>&lt; 2 hour</option>
-            </select>
+            <div class="selectWrapper">
+                <select class="selectBox">
+                <option selected >All</option>
+                <option>&lt; 30 mins</option>
+                <option>&lt; 1 hour</option>
+                <option>&lt; 2 hour</option>
+                <option>&lt; 3 hour</option>
+              </select>
+            </div>
           </div>
           <div class="form-group col-md-3">
             <label for="inputState">Difficulty</label>
-            <select name="beds" id="inputState" class="form-control">
-              <option selected>All</option>
-              <option>Beginner</option>
-              <option>Intermediate</option>
-              <option>Advanced</option>
-            </select>
+            <div class="selectWrapper">
+                <select class="selectBox">
+                <option selected >All</option>
+                <option>Beginner</option>
+                <option>Intermediate</option>
+                <option>Advanced</option>
+              </select>
+            </div>
           </div>
           <div class="form-group col-md-3">
             <label for="inputState">Sort</label>
-            <select name="sort" id="inputState" class="form-control">
-              <option selected>Newest</option>
-              <option>Oldest</option>
-              <option>Price: Low to High</option>
-              <option>Price: High to Low</option>
-              <option>Avg. Rating</option>
-              <option>Most Reviews</option>
-            </select>
+            <div class="selectWrapper">
+                <select class="selectBox">
+                <option selected >Newest</option>
+                <option>Price: Low to High</option>
+                <option>Price: High to Low</option>
+                <option>Avg. Rating</option>
+                <option>Most Reviews</option>
+              </select>
+            </div>
           </div>
         </div>
         </div>
         </form>
     </div>
 
-    <div class="container" id="recipes">
-            <div class="col-md-11">
+    <div class="container">
+            <div class="col-md-11" name="recipe">
                 <div class="row vertical-align">
                     <div class="col-md-3 recipe-image">
-                        <img src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F6569085.jpg" class="float-left" alt="">
+                        <img class="preview-image" src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F6569085.jpg" class="float-left" alt="">
                     </div>
                     <div class = "col-md-5">
-                        <a href="#"><h2>Grilled Lemon Salmon</h2></a>
+                        <a href="#" class="recipe-link"><h2>Grilled Lemon Salmon</h2></a>
                         <p> Selinie Wang</p>
                         <p>Prep Time: 1 hour</p>
                         <p>Level of difficulty: Intermediate</p>
                     </div>
-                    <div class = "col-md-2">
+                    <div class = "col-md-2 right-content">
                         <h2></h2>
                         <button class="like-button" id="like-button" onclick="likeButton('like-button')"> <i class="fa fa-heart" style="font-size:30px;"></i> </button>
-                        <p> Rating: 4/5</p>
+                        <p> <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> (55)</p>
                     </div>
 
                 </div>
-            </div>
+            </div><br>
+            <p id="displayResults"></p>
         </div>
     </div>
 </body>
 </html>
+
+<script>
+    var numResults;
+    numResults = () =>{
+        var x = document.getElementsByName("recipe");
+        return "Showing " + x.length + " result(s)";
+    }
+    document.getElementById("displayResults").innerHTML = numResults();
+</script>
