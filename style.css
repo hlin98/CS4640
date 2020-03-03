@@ -1,32 +1,90 @@
+body{
+    font-family: 'Nunito', sans-serif;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link{
+    padding: 0px;
+    font-family: 'Nunito', sans-serif;
+}
+
+a.nav-link:hover{
+    border-bottom: 3px solid #FF4258;
+}
+
 .container{
-    margin-top: 2%;
+    margin-top: 1%;
+    font-family: 'Nunito', sans-serif;
 }
 
 form{
-    background-color: #E1E1E1;
-    padding: 2%;
+    padding: 1%;
 }
 
-#searchform{
-    z-index:99 !important;
-    position:relative;
+.input-wrapper {
+    display:inline-block;
+    position: relative
+}
+
+.input-wrapper:before {
+    font-family: 'FontAwesome';
+    content: '\f002';
+    position: absolute;
+    font-size: 20px;
+    color: #838282  ;
+    margin-top: .3%;
+    left: 10px;
+}
+
+  #query{
+    border-radius: 30px;
+    -moz-border-radius: 30px;
+    overflow: hidden;
+    padding-left: 5%;
+    background-color: #E1E1E1;
+    height: 40px;
+  }
+
+  .search-icon{
+    padding: 10px; 
+    min-width: 40px;
+  }
+
+  #submit{
+    border-radius: 28px;
+    font-family: 'Nunito', sans-serif;
+    color: #ffffff;
+    font-size: 15px;
+    background: #3498db;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+  }
+  #submit:hover{
+    background: #3cb0fd;
+    text-decoration: none;
+  }
+
+  .selectWrapper{
+    border-radius:36px;
+    display:inline-block;
+    overflow:hidden;
+    background:white;
+    border:1px solid #cccccc;
+  }
+  .selectBox{
+    width:120px;
+    height:30px;
+    border:0px;
+    outline:none;
   }
 
 .filter-form{
     margin-top: 3%;
 }
 
-.btn-secondary{
-background-color: #363635;
-border-color: #363635;
-color:#BCE7D5;
--o-transition:.5s;
--ms-transition:.5s;
--moz-transition:.5s;
--webkit-transition:.5s;
-transition:.5s;
-font-family: 'Fredoka One';
+#inputState{
+    border-radius: 30px;
 }
+
 .vertical-align {
     display: flex;
     align-items: center;
@@ -34,9 +92,12 @@ font-family: 'Fredoka One';
 .row{
     border: 1px solid #CEC7C7;
     padding:0 px;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    overflow: hidden;
 }
 
-img{
+img.preview-image{
     display: list-item;
     height: 230px;
     margin-right: 5%;
@@ -66,8 +127,20 @@ div.col-md-3.recipe-image{
     padding: 0px;
 }
 
-div.col-md-2{
+div.col-md-2.right-content{
     text-align: right;
     margin-right: 0px;
     margin-left: 15%;
+}
+
+.recipe-link{
+    color: black;
+}
+
+.recipe-link:hover{
+    color: black;
+}
+
+.fa-star{
+    color: gold;
 }
