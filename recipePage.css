@@ -1,3 +1,5 @@
+/* Authors - Jenny Yao, Selinie Wang, Helen Lin */
+/* ------STANDARD CSS----- */
 *{
   margin: 0;
   font-family: 'Nunito';
@@ -16,21 +18,14 @@ a .banner-text{
 a:hover{
   color: black;
 }
+
+/* Subtopic - Ingredients, Directions, Reviews  */
 .subHead{
   color: #E05028;
 
 }
 
-.banner{
-  text-align: center;
-  /* color: white; */
-  padding: 20px 0 20px 0;
-}
-.banner-text{
-  font-size: 20px;
-  margin: 0;
-}
-
+/* bootstrap buttons */
 .btn-primary{
   background-color: #FF4258;
   border-color: #FF4258;
@@ -38,22 +33,20 @@ a:hover{
 .btn{
   color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out
 }
+
 .container{
   align-content: center;
   margin-top: 40px;
 }
 
+/* -----style for the card------ */
 .card{
   margin-top: 40px;
   border: 1px;
   border-radius: 1em;
-  /* border-color: red; */
   box-shadow: 10px 10px 25px -3px rgba(0,0,0,0.1);
-
-  /* height: 50px; */
 }
 .card-img{
-  /* width: 10px; */
   height: 100%;
 }
 .col-sm:nth-child(2),.col-sm:nth-child(3){
@@ -73,7 +66,7 @@ a:hover{
   border-color: #c71a2e;
 }
 
-
+/* ---Style for ingredients--- */
 .ingredients{
   margin-top: 100px;
 }
@@ -81,11 +74,11 @@ table{
   margin-top: 20px;
 }
 
-
+/* ---Style for directions--- */
 .directions{
   margin-top: 100px;
 }
-.grid-directions{
+.grid-directions{   /*numbers on the left column and directions on the right column*/
   display: grid;
   grid-template-columns: 20% 80%;
   grid-row-gap: 15px;
@@ -106,6 +99,7 @@ table{
     font-size: 1em;
 }
 
+/* ---Style for reviews--- */
 .reviews{
   margin-top: 100px;
 }
