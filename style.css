@@ -99,7 +99,7 @@ form{
 
 img.preview-image{
     display: list-item;
-    height: 230px;
+    height: 250px;
     margin-right: 5%;
     border-radius: 4px;
     width: 250px;
@@ -131,6 +131,7 @@ div.col-md-2.right-content{
     text-align: right;
     margin-right: 0px;
     margin-left: 15%;
+    top: -80px;
 }
 
 .recipe-link{
@@ -139,8 +140,4 @@ div.col-md-2.right-content{
 
 .recipe-link:hover{
     color: black;
-}
-
-.fa-star{
-    color: gold;
 }
