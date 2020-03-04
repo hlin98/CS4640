@@ -86,23 +86,6 @@
     </div>
     </div>
 
-    <script>
-    function follow_user() {
-        var x = document.getElementById("followuser");
-        if (x.innerHTML === "Not Following User") {
-          x.innerHTML = "Following User";
-        } else {
-          x.innerHTML = "Not Following User";
-        }
-      }
-    </script>
-
-    <script>
-    function user_recipes() {
-        var x = document.getElementById()
-    }
-    </script>
-
     <div class="container">
         <div class="col-md-11" name="preferences">
         <div class="w3-bar w3-border w3-light-grey w3-center">
@@ -123,26 +106,36 @@
         </div>
 
     <script>
-        $(document).ready(function() {
-        var readURL = function(input) {
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
-            reader.onload = function (e) {
-                $('.profile-pic').attr('src', e.target.result);
-            } 
-            reader.readAsDataURL(input.files[0]);
+    // Function to follow and unfollow user
+    function follow_user() {
+        var x = document.getElementById("followuser");
+            if (x.innerHTML === "Not Following User") {
+            x.innerHTML = "Following User";
+        } else {
+            x.innerHTML = "Not Following User";
         }
-        }
-        $(".file-upload").on('change', function(){
-            readURL(this);
-        });
-        $(".upload-button").on('click', function() {
-        $(".file-upload").click();
-        });
-    });
-    </script>
+    }
 
-    </div>
-    </div>
-        
+    // Function to upload profile picture
+    $(document).ready(function() {
+    var readURL = function(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            $('.profile-pic').attr('src', e.target.result);
+        } 
+        reader.readAsDataURL(input.files[0]);
+    }
+    }
+    $(".file-upload").on('change', function(){
+        readURL(this);
+    });
+    $(".upload-button").on('click', function() {
+    $(".file-upload").click();
+    });
+});
+</script>
+
+</div>
+</div>
 </html>

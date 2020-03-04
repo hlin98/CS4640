@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Search Results</title>
+    <title>Login</title>
     <link href="style.css" rel="stylesheet">
     <script type="text/javascript" src="jquery-3.3.1.js"></script>
     <script src="script.js"></script>
@@ -55,7 +55,7 @@
                         <div id="passinput" class="feedback"></div>
                         <input type="password" placeholder="Enter valid password" id="passtext" required maxlength="18" minlength="8" size="44">
                         <p></p>
-                        
+
                         <input type="checkbox" id="showpass" style="font-size: 5px"> Show Password
                         <p></p>
                         <div align="center">
@@ -69,7 +69,6 @@
             </div>
 
     <script>
-    
     // Function to show the encoded password
     (function checkPassword() {
       var pass2 = document.getElementById("passtext");
@@ -85,7 +84,7 @@
             alert("Try again. Unable to switch type.");
          }         
       }, false);      
-   }());
+    }());
 
     // Function to check if username is eligible
     function checkUser() {
@@ -95,7 +94,7 @@
       else
          msg.textContent = "";        
     } var user = document.getElementById("username");
-   user.addEventListener("blur", checkUser, false);
+    user.addEventListener("blur", checkUser, false);
 
     // Function to check if password is eligible
     function checkPass() {
@@ -105,7 +104,7 @@
       else
          msg2.textContent = "";       
     } var user2 = document.getElementById("passtext");
-   user2.addEventListener("blur", checkPass, false);
+    user2.addEventListener("blur", checkPass, false);
     </script>
 
 </body>
