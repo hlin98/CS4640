@@ -105,6 +105,24 @@ img.preview-image{
     width: 250px;
 }
 
+img.social-image{
+    display: list-item;
+    height: 40px;
+    margin-right: 5%;
+    border-radius: 4px;
+    width: 40px;
+}
+
+.follow-button{
+    align-items: center;
+}
+
+.social-media{
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
 .like-button{
     border-style: none;
     margin-bottom: 100%;
@@ -143,4 +161,10 @@ div.col-md-2.right-content{
 
 .fa-star{
     color: gold;
+}
+
+.feedback{
+    font-style: italic;
+    color: #FF4258;
+    font-size: 12px;
 }

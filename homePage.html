@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="homePage.css">
+    <title>Cooking For College</title>
+    <script type="text/javascript">
+      function setFocus(){
+        var searchItm = document.getElementById("search");
+
+        searchItm.focus();
+      }
+
+
+    </script>
+  </head>
+  <body onload="setFocus();">
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+        <a class="navbar-brand" href="#">LOGO</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="homePage.html">Home<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Profile</a>
+              </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <div class="container">
+      <div class="quote">
+        <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+      </div>
+
+    <form action="index.html" method="post">
+        <div class="form-group">
+          <input type="text" class="form-control" id="search" placeholder="search for a recipe" required/>
+        </div>
+        <div class="buttons">
+          <button type="submit" class="btn btn-primary btn-lg" id="searchBtn" >Search</button>
+          <!-- <button type="submit" class="btn btn-primary btn-lg" onclick="checkVal()" required>Search</button> -->
+          <button type="button" class="btn btn-secondary btn-lg">I'm Feeling Special</button>
+        </div>
+      </form>
+
+
+
+    </div>
+    <script type="text/javascript">
+    document.getElementById("searchBtn").addEventListener("click", checkVal);
+
+    function checkVal(){
+      var searchItm = document.getElementById("search");
+
+      if(searchItm.value == ""){
+        console.log("HI");
+        alert("Please type something in the search box!");
+      }
+    }
+    </script>
+  </body>
+</html>
