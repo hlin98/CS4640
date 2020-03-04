@@ -39,13 +39,14 @@
         </div>
       </nav>
 
+      
       <div class="container">
+      <!-- Search and filter form-->
       <form class="form-inline justify-content-center" id="searchform" method = "GET" action = "#recipes" >
         <div class="input-wrapper">
         <input class="form-control mr-sm-5 search" id="query" name="query"  type="text" placeholder= "Search for Cheese Cake" size="80">
         </div>
         <div class="filter" id="form1">
-        <!--{% csrf_token %}-->
         <div class="form-row filter-form">
           <div class="form-group col-md-3">
             <label for="inputState">Prep Time</label>
@@ -85,43 +86,42 @@
         </div>
         </div>
         </form>
-    </div>
-    <div class="container">
-      <div class="col-md-11" name="recipe">
-          <div class="row vertical-align">
-              <div class="col-md-3 recipe-image">
-                  <img class="preview-image" src="https://www.tasteofhome.com/wp-content/uploads/2017/10/exps10565_GIT2919402C13_03_5b_WEB-2-696x696.jpg" class="float-left" alt="">
-              </div>
-              <div class = "col-md-5">
-                <a href="recipePage.html" class="recipe-link"><h3>Grilled Lemon Salmon</h3></a>
-                <div>
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star"></span>
-                </div>
-                <small>Recipe by Selinie Wang</small>
-                <p>Prep time: 1 hour</p>
-                <p>Level of difficulty: Medium</p>
-              </div>
-              <div class = "col-md-2 right-content">
-                <div style="float: right; margin-right: 10px;">
-                  <!-- <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" id="save" onclick="change()">Save</button> -->
-                  <input onclick="change()" type="button" value="Save" id="saveBtn"></input>
-                </div>
-                <div style="float: right; margin-right: 10px;">
-                  <i>Dinner</i>
-                </div>
-              </div>
 
+      <div class="card">
+        <div class="row">  <!--grid system with three columns -->
+          <div class="col-sm">
+            <img class="card-img" src="https://www.tasteofhome.com/wp-content/uploads/2017/10/exps10565_GIT2919402C13_03_5b_WEB-2-696x696.jpg" alt="">
           </div>
-      </div><br>
+          <div class="col-sm">
+            <a href="recipePage.html" name="recipe" class="recipe-link"><h3>Lemon Salmon</h3></a>
+            <div> <!--star rating -->
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star"></span>
+            </div>
+            <small>Recipe by Selinie Wang</small>
+            <p>Prep time: 1 hour</p>
+            <p>Level of difficulty: Medium</p>
+          </div>
+          <div class="col-sm">
+            <div style="float: right; margin-right: 10px;">
+              <input onclick="change()" type="button" value="Save" id="saveBtn"></input>
+            </div>
+            <div style="float: right; margin-right: 10px;">
+              <i>Dinner</i>
+            </div>
+          </div>
+        </div>
+        </div>
+      <br>
       <p id="displayResults"></p>
   </div>
 </body>
 </html>
 
+ <!-- Arrow function to display number of search results -->
 <script>
     var numResults;
     numResults = () =>{
