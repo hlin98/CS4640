@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Search Results</title>
+    <title>Register</title>
     <link href="style.css" rel="stylesheet">
     <script type="text/javascript" src="jquery-3.3.1.js"></script>
     <script src="script.js"></script>
@@ -43,23 +43,31 @@
                 <img width="400px" src="https://media.giphy.com/media/jtj1ESIdlNDzzccTIV/giphy.gif">
                 <div align="left" class="col-md-11">
                     <p></p>
-                    <a href="./register.html">
-                      <p align="right" style="font-size: 12px; color: #fd455c; margin-left: 100">Don't have an account? Register.</p>
+                    <a href="./login.html">
+                        <p align="right" style="font-size: 12px; color: #fd455c; margin-left: 100">Already signed up? Log in.</p>
                     </a>
-                    <form id="loginform" action="homePage.html" method="POST">
+                    <form id="loginform" action="homePage.html" onsubmit="return checkEmail() || confirmPass()" method="POST">
                         <b><label>Username:</label></b>
                         <div id="userinput" class="feedback"></div>
                         <input type="text" placeholder="Enter username" id="username" autofocus required size="44">
+                        <p></p>
+                        <b><label>UVA Email:</label></b>
+                        <div id="emailinput" class="feedback"></div>
+                        <input type="text" placeholder="Enter valid UVA email address" id="emailtext" autofocus required size="44">
                         <p></p>
                         <b><label>Password:</label></b>
                         <div id="passinput" class="feedback"></div>
                         <input type="password" placeholder="Enter valid password" id="passtext" required maxlength="18" minlength="8" size="44">
                         <p></p>
-                        
+                        <b><label>Confirm Password:</label></b>
+                        <div id="passinput2" class="feedback"></div>
+                        <input type="password2" placeholder="Confirm valid password" id="passtext2" required maxlength="18" minlength="8" size="44">
+                        <p></p>
+
                         <input type="checkbox" id="showpass" style="font-size: 5px"> Show Password
                         <p></p>
                         <div align="center">
-                        <input type="submit" id="subbutton" style="width: 200px" value="Log In"></div>
+                        <input type="submit" id="subbutton" style="width: 200px" value="Sign Up"></div>
                     </form>
                 </div>
                 <img width="400px" src="https://i.imgur.com/XmV4zDV.jpg">
@@ -73,19 +81,47 @@
     // Function to show the encoded password
     (function checkPassword() {
       var pass2 = document.getElementById("passtext");
+      var pass3 = document.getElementById("passtext2");
       var show2 = document.getElementById("showpass");
       
       show2.addEventListener("change", function checkPassword() {
          try {
-            if (show2.checked)
-               pass2.type ="text";
-            else
+            if (show2.checked) {
+               pass2.type = "text";
+               pass3.type = "text";
+            } else
                pass2.type = "password";
+               pass3.type = "password2";
          } catch(error) {
             alert("Try again. Unable to switch type.");
          }         
       }, false);      
    }());
+
+   // Function to check valid email address
+   function checkEmail() {
+        var studentid = document.getElementById("emailtext")
+        if (studentid.value.length < 17 || studentid.value.length > 19) {
+            alert ("Invalid UVA email address.");
+            return false;
+        } if (!checkPattern(studentid.value)) {
+            alert("Student ID must be in the UVA computingID format");
+            return false;
+        } return true;
+    }
+
+   // Function to check if passwords are the same
+   function confirmPass() {
+        var password1 = document.getElementById("passtext");
+        var password2 = document.getElementById("passtext2");
+        if (password1 != password2) {
+            alert("Passwords do not match.")
+            return false;
+        } else {
+            password1.textContent = "";
+            return true;
+        } return true;
+   }
 
     // Function to check if username is eligible
     function checkUser() {
