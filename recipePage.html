@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="authors" content="Jenny Yao, Selinie Wang, Helen Lin">
+  <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="recipePage.css">
+
+  <title>Main Entrees | Grilled Lemon Salmon</title>
+  <script type="text/javascript">
+    /* function addReview - when the button AddReview is clicked the text typed in textare will display in Review section*/
+    function addReview() {
+      var text = document.getElementById("textReview");
+      var showarea = document.getElementById("newReview");
+      showarea.innerHTML = text.value;
+    }
+
+    /* function change - when the save button is clicked the color of the box-shadow & the text of the save button will be changed*/
+    function change() {
+      var card = document.querySelector('.card');
+      var saveButton = document.getElementById("saveBtn");
+      console.log(card.style);
+      if (saveBtn.value == "Save") {
+        saveBtn.value = "Saved!";
+        saveBtn.style.backgroundColor = "#c71a2e";
+        card.style.boxShadow = "10px 10px 25px -3px rgba(255,66,88,0.1)";
+
+      } else {
+        saveBtn.value = "Save";
+        saveBtn.style.backgroundColor = "#FF4258";
+        card.style.boxShadow = "10px 10px 25px -3px rgba(0,0,0,0.1)";
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <header>
+    <!-- navigation bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+      <a class="navbar-brand" href="#">LOGO</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="homePage.html">Home<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Search</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Profile</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+        <a class="navbar-brand" href="#">LOGO</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="homePage.html">Home<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Search</a>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Profile</a>
+              </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+  <div class="container">
+    <button type="button" class="btn btn-primary btn-sm">Back to search results</button>
+
+    <!-- recipe card - containing information about the recipe: Name, creator, rating, prep time, etc. -->
+    <div class="card">
+      <div class="row">  <!--grid system with three columns -->
+        <div class="col-sm">
+          <img class="card-img" src="https://www.tasteofhome.com/wp-content/uploads/2017/10/exps10565_GIT2919402C13_03_5b_WEB-2-696x696.jpg" alt="">
+        </div>
+        <div class="col-sm">
+          <h3>Grilled Lemon Salmon</h3>
+          <div> <!--star rating -->
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+          </div>
+          <small>Recipe by Selinie Wang</small>
+          <p>Prep time: 1 hour</p>
+          <p>Level of difficulty: Medium</p>
+        </div>
+        <div class="col-sm">
+          <div style="float: right; margin-right: 10px;">
+            <input onclick="change()" type="button" value="Save" id="saveBtn"></input>
+          </div>
+          <div style="float: right; margin-right: 10px;">
+            <i>Dinner</i>
+          </div>
+        </div>
+      </div>
+    </div>  <!--end of card -->
+
+    <!-- Ingredients section -->
+    <div class="ingredients">
+      <h4 class="subHead">Ingredients</h4>
+      <table style="width:100%">
+        <tr>
+          <td>2 teaspoons snipped fresh dill or 3/4 teaspoon dill weed</td>
+            <td>3 tablespoons chicken broth</td>
+        </tr>
+        <tr>
+          <td>1/2 teaspoon lemon-pepper seasoning</td>
+          <td>3 tablespoons canola oil</td>
+        </tr>
+        <tr>
+          <td>1/2 teaspoon salt, optional</td>
+          <td>3 tablespoons reduced-sodium soy sauce</td>
+        </tr>
+        <tr>
+          <td>1/4 teaspoon garlic powder</td>
+          <td>3 tablespoons finely chopped green onions</td>
+        </tr>
+        <tr>
+          <td>1 salmon fillet (1-1/2 pounds)</td>
+          <td>1 small lemon, thinly sliced</td>
+        </tr>
+        <tr>
+          <td>1/4 cup packed brown sugar</td>
+          <td>2 onion slices, separated into rings</td>
+        </tr>
+      </table>
+    </div>  <!--end of ingredients -->
+
+    <!-- Direction section -->
+    <div class="directions">
+      <h4 class="subHead">Directions</h4>
+      <div class="grid-directions">
+        <div class="grid-item">
+          <span class="number">1</span>
+        </div>
+        <div class="grid-item">
+          Sprinkle dill, lemon-pepper, salt if desired and garlic powder over salmon. In a large resealable plastic bag, combine the brown sugar, broth, oil, soy sauce and green onions; add salmon. Seal bag and turn to coat. Cover and refrigerate for 1 hour, turning
+          once.
+        </div>
+        <div class="grid-item"><span class="number">2</span></div>
+        <div class="grid-item">
+          Drain and discard marinade. Grill salmon skin side down, over medium heat; arrange lemon and onion slices over the top. Cover and cook for 15-20 minutes or until fish flakes easily with a fork.
+        </div>
+      </div>
+    </div> <!--end of directions -->
+
+    <!-- Review section -->
+    <div class="reviews">
+      <h4 style="display: inline; float: left; margin-right: 10px;" class="subHead">Reviews</h4>
+      <div style="display:inline; margin-right: 20px;">
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star"></span>
+      </div>
+
+      <!-- Adding a review -->
+      <form class="" action="index.html" method="post">
+        <div class="form-group">
+          <textarea class="form-control" id="textReview" rows="3" placeholder="Write a Review..."></textarea>
+        </div>
+      </form>
+      <input type="button" class="btn btn-primary btn-sm" value="Add Review" id="buttonReview" onclick="addReview()" />
+
+      <!-- List of the Reviews -->
+      <div class="review-list">
+         <div id="newReview">  <!--this div is where the new addedReview will be inserted -->
+        </div>
+        <div class="review-item">
+          <div style="float: left; margin-right: 20px;">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+          </div>
+          <h6 style="align:right;">James Aslkj</h6>
+          <small>September 21, 2010</small>
+          <p>I thought this was great. Just asked my husband, who is now on a heart-healthy diet following a double angioplasty, "How's the salmon?" He replied, "Effin' excellent!" I guess we'll be having this more often! I doubled the marinade ingredients
+            (both the rub and the sauce) as a couple of reviewers suggested, and refrigerated the fillet in the marinade for about three hours. The dill in my garden is mostly gone to seed but I did get enough dill fronds to make the rub, then before
+            grilling I sprinkled a bit more dried dillweed over the fish. I'd forgotten to buy green onions so I just added a couple more slices of regular onion to the marinade.</p>
+        </div>
+        <div class="review-item">
+          <div style="float: left; margin-right: 10px;">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          </div>
+          <h6 style="align:right;">James Aslkj</h6>
+          <small>September 21, 2010</small>
+          <p>I thought this was great. Just asked my husband, who is now on a heart-healthy diet following a double angioplasty, "How's the salmon?" He replied, "Effin' excellent!" I guess we'll be having this more often! I doubled the marinade ingredients
+            (both the rub and the sauce) as a couple of reviewers suggested, and refrigerated the fillet in the marinade for about three hours. The dill in my garden is mostly gone to seed but I did get enough dill fronds to make the rub, then before
+            grilling I sprinkled a bit more dried dillweed over the fish. I'd forgotten to buy green onions so I just added a couple more slices of regular onion to the marinade.</p>
+        </div>
+      </div>  <!--end of reviews list -->
+
+    </div> <!--end of reviews section -->
+</body>
+</html>
