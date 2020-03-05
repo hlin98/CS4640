@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- Selinie Wang (jw6qe), Helen Lin (hl5ec), Jenny Yao (jy7eq) -->
 <html>
 <head>
     <title>Search Results</title>
@@ -16,6 +17,7 @@
 <body>
 </head>
 <body>
+    <!-- Navigation bar code -->
 	<nav class="navbar navbar-expand-lg navbar-light bg-transparent">
         <img class="navbar-brand" height="30px" href="#" src="https://i.imgur.com/9wVzybw.jpg">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -40,6 +42,7 @@
         </div>
       </nav>
 
+    <!-- Profile Description code -->
     <div class="container">
         <div class="col-md-11" name="profile"></div>
             <div class="row vertical-align">
@@ -86,23 +89,7 @@
     </div>
     </div>
 
-    <script>
-    function follow_user() {
-        var x = document.getElementById("followuser");
-        if (x.innerHTML === "Not Following User") {
-          x.innerHTML = "Following User";
-        } else {
-          x.innerHTML = "Not Following User";
-        }
-      }
-    </script>
-
-    <script>
-    function user_recipes() {
-        var x = document.getElementById()
-    }
-    </script>
-
+    <!-- User favorites and preferences code -->
     <div class="container">
         <div class="col-md-11" name="preferences">
         <div class="w3-bar w3-border w3-light-grey w3-center">
@@ -124,7 +111,19 @@
         </div>
         </div>
 
-    <script>
+     <script>
+        // Function to follow and unfollow user
+        function follow_user() {
+            var x = document.getElementById("followuser");
+                if (x.innerHTML === "Not Following User") {
+                x.innerHTML = "Following User";
+            } else {
+                x.innerHTML = "Not Following User";
+            }
+        }
+    
+        // Had help using GeekforGeeks
+        // Function to upload profile picture
         $(document).ready(function() {
         var readURL = function(input) {
         if (input.files && input.files[0]) {
