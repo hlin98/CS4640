@@ -134,3 +134,8 @@ margin-left: 5%;
     padding-left:8%;
 }
 }
+
+input::placeholder {
+    font-size: 13px;
+    color: #cbcbcb;
+  }
