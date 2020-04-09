@@ -1,3 +1,6 @@
+<?php
+  include 'dbConnection.inc.php'
+ ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -18,6 +21,10 @@
 </head>
 
 <body onload="setFocus();">
+
+<html lang="en" dir="ltr">
+
+
   <header>
     <!-- navigation bar on the top left -->
     <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
@@ -48,16 +55,17 @@
       <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
     </div>
     <!-- search box -->
-    <form action="index.html" method="post">
+    <form action="search_results.php" method="POST">
       <div class="form-group">
-        <input type="text" class="form-control" id="search" placeholder="search for a recipe" required/>
+        <input type="text" class="form-control" id="search" name="search" placeholder="search" required/>
       </div>
       <!--submit button -->
-      <div class="buttons">
-        <button type="submit" class="btn btn-primary btn-lg" id="searchBtn">Search</button>
-        <button type="button" class="btn btn-secondary btn-lg">I'm Feeling Special</button>
+      <div class="buttons">ie
+        <button type="submit" class="btn btn-primary btn-lg" name="submit-search" id="searchBtn">Search</button>
+        <button type="button" class="btn btn-secondary btn-lg" >I'm Feeling Special</button>
       </div>
     </form>
+
   </div>
   <script type="text/javascript">
     document.getElementById("searchBtn").addEventListener("click", checkVal);
