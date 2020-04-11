@@ -1,9 +1,9 @@
 /* --- Helen Lin (hl5ec), Jenny Yao (jy7eq), Selinie Wang (jw6qe) --- */
+@media only screen and (min-device-width: 420px) {
 body{
     /* --- Font--- */
     font-family: 'Nunito', sans-serif;
 }
-
 /* ---Style for navbar--- */
 .navbar-expand-lg .navbar-nav .nav-link{
     padding: 0px;
@@ -73,6 +73,11 @@ border:0px;
 outline:none;
 }
 
+.profilebox {
+    width: 600px;
+    height: 300px;
+}
+
 /* ---Style for filters--- */
 .filter-form{
     margin-top: 3%;
@@ -119,13 +124,14 @@ img.social-image{
     color: #FF4258;
     font-size: 12px;
 }
+}
 
 /* ---Style for smaller windows--- */
 @media (min-width: 582px){
-.form-inline .form-group{
-margin-top: 1%;
-margin-left: 5%;
-}
+    .form-inline .form-group{
+    margin-top: 1%;
+    margin-left: 5%;
+    }
 }
 
 @media (max-width: 760px){
