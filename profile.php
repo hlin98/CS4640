@@ -1,12 +1,12 @@
+<!-- Selinie Wang (jw6qe), Helen Lin (hl5ec), Jenny Yao (jy7eq) -->
 <?php 
 session_start();
 ?>
-<!DOCTYPE html>
-<!-- Selinie Wang (jw6qe), Helen Lin (hl5ec), Jenny Yao (jy7eq) -->
-<html>
 
+<!DOCTYPE html>
+<html>
 <head>
-    <title>Search Results</title>
+    <title>Profile</title>
     <link href="style.css" rel="stylesheet">
     <script type="text/javascript" src="jquery-3.3.1.js"></script>
     <script src="script.js"></script>
@@ -41,7 +41,7 @@ session_start();
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="homePage.html">Home</a>
+                        <a class="nav-link" href="homePage.php">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">About</a>
@@ -63,6 +63,8 @@ session_start();
             <div align="left" class="profilebox"
                 style="margin-top: 30px; width: 1000px; padding: 20px; flex-direction: row; display: flex; justify-content: space-between;">
                 <div align="center" style="background-color: white; width: 300px;">
+                <a href="reset-password.php" style="background-color: lightgray; margin-bottom: 20px;
+                    border: none" class="btn btn-warning">Reset Password</a>
                     <img class="profile-pic" width="250"
                         src="https://vignette.wikia.nocookie.net/caramella-girls/images/9/99/Blankpfp.png/revision/latest?cb=20190122015011">
                     <div align="center" style="padding: 35px;">
@@ -95,7 +97,7 @@ session_start();
                             odio morbi quis commodo odio aenean. Interdum velit laoreet id donec ultrices.
                             Viverra nibh cras pulvinar mattis nunc sed.</p>
                         <b>
-                            <p style="margin-top: 40px; color: #fd455c;">Favorites:</p>
+                            <p style="margin-top: 40px; color: #fd455c;">Saved Recipes:</p>
                         </b>
                         <div style="padding-left: 15px;">
                             <p><?php echo $_SESSION['Favorites'];?></p>
@@ -108,8 +110,7 @@ session_start();
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
+    </div>
 
         <script>
             // Had help using GeekforGeeks

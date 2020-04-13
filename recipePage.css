@@ -30,13 +30,16 @@ a:hover{
   background-color: #FF4258;
   border-color: #FF4258;
 }
-.btn{
+/* .btn{
   color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out
-}
+} */
+
 
 .container{
   align-content: center;
-  margin-top: 40px;
+  margin-top: 10px;
+  margin-bottom: 100px;
+
 }
 
 /* -----style for the card------ */
