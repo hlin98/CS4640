@@ -1,6 +1,21 @@
 <!-- Selinie Wang (jw6qe), Helen Lin (hl5ec), Jenny Yao (jy7eq) -->
 <?php 
 session_start();
+
+$server = "localhost";
+$username = "root";
+$password = "";
+$dbname = "Reciplz";
+
+$conn = mysqli_connect($server, $username, $password, $dbname);
+
+$sql = 'SELECT * FROM Users WHERE UserID =  '.$_SESSION['id'].'';
+$result = $conn->query($sql);
+
+while($row = mysqli_fetch_array($result)) {
+    $descr =  $row['Description'];
+}
+$conn->close();
 ?>
 
 <!DOCTYPE html>
@@ -84,29 +99,12 @@ session_start();
                         <p style="font-size: 20px;"><?php echo 'Welcome, ' . $_SESSION['username'] . '.'; ?></p>
                     </b>
                     <div style="font-size: 12px;">
-                        <p style="color:gray; text-align: justify;">Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit, sed
-                            do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nulla pellentesque
-                            dignissim enim sit amet venenatis urna cursus eget. Elementum eu facilisis sed
-                            odio morbi quis commodo odio aenean. Interdum velit laoreet id donec ultrices.
-                            Viverra nibh cras pulvinar mattis nunc sed.</p>
-                        <p style="color:gray; text-align: justify;">Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit, sed
-                            do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nulla pellentesque
-                            dignissim enim sit amet venenatis urna cursus eget. Elementum eu facilisis sed
-                            odio morbi quis commodo odio aenean. Interdum velit laoreet id donec ultrices.
-                            Viverra nibh cras pulvinar mattis nunc sed.</p>
+                        <p style="color:gray; text-align: justify;"><?php echo $descr; ?></p>
                         <b>
                             <p style="margin-top: 40px; color: #fd455c;">Saved Recipes:</p>
                         </b>
                         <div style="padding-left: 15px;">
                             <p><?php echo $_SESSION['Favorites'];?></p>
-                        </div>
-                        <b>
-                            <p style="color: #fd455c;">Following:</p>
-                        </b>
-                        <div style="padding-left: 15px;">
-                            <p><?php echo $_SESSION['Following'];?></p>
                         </div>
                     </div>
                 </div>
