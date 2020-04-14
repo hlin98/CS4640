@@ -46,7 +46,7 @@ session_start();
                 <a class="nav-link" href="#">Search</a>
               </li>
             <li class="nav-item">
-                <a class="nav-link" href="profile.php">Profile</a>
+                <a class="nav-link" href="#">Profile</a>
               </li>
           </ul>
         </div>
@@ -98,6 +98,14 @@ session_start();
             $result = mysqli_query($conn, $sql);
             $queryResult = mysqli_num_rows($result);
             if ($queryResult > 0){
+                if(isset($_POST['id'])){
+                    if (isset($_SESSION['username'])){
+                        saveRecipe($_SESSION['username'], $_POST['id']);
+                        $is_saved = getSaved($_SESSION['username'], $_POST['id']);
+                    }else{
+                        echo "Please login";
+                    }
+                }
                 while ($row=mysqli_fetch_assoc($result)){
                     $recipe_id = $row['RecipeId'];    //variable that stores recipe id
                     $avgRating = getAverageRating($recipe_id); // call function to get average
@@ -130,7 +138,6 @@ session_start();
                             </div>
                             <div class='col-sm'>
                                 <div style='float: right; margin-right: 10px;''>";
-            
                                 echo "
                                 <form method='POST'>
                                     <input name='save' type='submit' value='Save'</p> 
@@ -140,14 +147,6 @@ session_start();
                             </div>
                         </div>
                     </div>";
-                }
-                if(isset($_POST['id'])){
-                    $is_saved = getSaved($_SESSION['username'], $_POST['id']);
-                    if (isset($_SESSION['username'])){
-                        saveRecipe($_SESSION['username'], $_POST['id']);
-                    }else{
-                        echo "Please login";
-                    }
                 }
             }else{
                 echo "Oops, there are no recipes matching that search";

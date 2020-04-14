@@ -1,6 +1,10 @@
 <?php
-  include 'dbConnection.inc.php'
- ?>
+  session_start();
+  // include 'dbConnection.inc.php'
+  include 'recipe_db.php';
+
+
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -62,7 +66,7 @@
                 <a class="nav-link" href="#">Search</a>
               </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Profile</a>
+                <a class="nav-link" href="profile.php">Profile</a>
               </li>
           </ul>
         </div>
@@ -71,7 +75,7 @@
 
   <div class="container">
   <!-- ASSUME FOR NOW USER CLICKS ON SALMON RECIPE -->
-    <?php
+<?php
         // Section to get Overall Star Ratings for ReflectionProperty;
         $sql = 'SELECT * FROM Recipes WHERE RecipeID='. $_GET['id'];
         $result = mysqli_query($conn, $sql);
@@ -123,11 +127,14 @@
           $ratingArr = array();
           $reviewNameArr = array();
           $reviewDescripArr = array();
+          $reviewTime = array();
           while($row = mysqli_fetch_array($result_6)) {
             array_push($userArr,$row['Username']);
             array_push($ratingArr,$row['Rating']);
             array_push($reviewNameArr,$row['ReviewName']);
             array_push($reviewDescripArr,$row['ReviewDescrip']);
+            array_push($reviewTime,$row['timeStamp']);
+            // echo "number of rows<br/>";
           }
 
           // FUNCTION -- recipe creator
@@ -141,6 +148,16 @@
           while ($row = mysqli_fetch_assoc($result_7)){
               $userName = $row['Username'];
           };
+
+          // FUNCTION -- Saves
+          if(isset($_POST['id'])){
+              if (isset($_SESSION['username'])){
+                  saveRecipe($_SESSION['username'], $_POST['id']);
+                  $is_saved = getSaved($_SESSION['username'], $_POST['id']);
+              }else{
+                  echo "Please login";
+              }
+          }
 
           while ($row=mysqli_fetch_assoc($result)){
 
@@ -177,7 +194,7 @@
                         };
                       };
                       echo "
-                      ".$avgRating."/5
+                      ".$avgRating."/5   (".count($reviewNameArr)." reviews)
                     </div>
                     <small>
                       Recipe by ".$userName."
@@ -187,7 +204,10 @@
                   </div>
                   <div class='col-sm'>
                     <div style='float: right; margin-right: 10px;''>
-                      <input onclick='change()' type='button' value='Save' id='saveBtn'></input>
+                      <form method='POST'>
+                          <input name='save' type='submit' value='Save'</p>
+                          <input type='hidden' name='id' value='".$_GET['id']."'></p>
+                      </form>
                     </div>
                     <div style='float: right; margin-right: 10px;''>
                       <i>Dinner</i>
@@ -240,29 +260,39 @@
 
                 echo "
                 ".$avgRating."/5
-                (".count($reviewNameArr)." reviews)</div>
-
-                <!-- Adding a review -->
+                (".count($reviewNameArr)." reviews)
+                </div>";
+              } // while loop
+        } // if
+?>
+            <!-- Adding a review -->
                 <p> Add a Review </p>
-                <form class='' action='recipePage.php' method='post'>
+                <form class='' action=" <?php $_SERVER['PHP_SELF']?>" method='POST'>
                   <div class='form-group'>
-                    <label for='exampleFormControlSelect1'>Rating out of 5</label>
-                    <select class='form-control' id='exampleFormControlSelect1'>
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
-                      <option>5</option>
-                    </select>
+                    <input class='form-control' id='textReview' name='Rating' placeholder='Number of Stars out of 5'></input>
                     <input class='form-control' id='textReview' name='ReviewsName' placeholder='Review Summary'></input>
-
                     <textarea class='form-control' id='textReview' name='ReviewDescrip' rows='3' placeholder='Go in detail...'></textarea>
+                    <input type='submit' class='btn btn-primary btn-sm' value='+ Add Review' name='addReview' id='buttonReview' />
+
                   </div>
                 </form>
-                <input type='button' class='btn btn-primary btn-sm' value='+ Add Review' id='buttonReview' onclick='addReview()' />
+<?php
+                if(isset($_POST['addReview'])){
+                  // try{
+                    $query = 'INSERT INTO RecipesReviews(RecipeID, UserID, Rating, ReviewName, ReviewDescrip) VALUES (' .$_GET['id']. ',' .$_SESSION['id']. ',' .$_POST['Rating']. ', "' .$_POST['ReviewsName']. '", "' .$_POST['ReviewDescrip'].'")';
+                    // add SQL statement into the database
+                    if ($conn->query($query) === TRUE) {
+                      // header("Refresh:0");
+                      echo "New record created successfully. Refresh to page to view your submitted review";
+                    } else {
+                      echo "Please type an integer for the Rating and try again";
+                    }
 
-                <div class='review-list'>
+              } // end IF statement
+                echo "<div class='review-list'>
                    <div id='newReview'>  <!--this div is where the new addedReview will be inserted -->
+
+
                   </div>
                   ";
                   if(count($reviewNameArr)!=0){
@@ -271,9 +301,11 @@
                       $indName =$userArr[$i];
                       $indReviewName =$reviewNameArr[$i];
                       $indReviewDescrip =$reviewDescripArr[$i];
+                      $indReviewTime =$reviewTime[$i];
 
-                      echo "<div class='review-item'>
-                      ".$indName."<br/>";
+
+                      echo "<div class='review-item' style='margin-bottom: 20px;'>
+                      <strong>".$indName."</strong><br/>";
 
                       if ($indRating == 5){
                         for ($j=0; $j < $indRating ; $j++) {
@@ -288,11 +320,13 @@
                             echo "<span class='fa fa-star'></span>";
                           };
                       }
-
                       echo "
                       ".$indReviewName."<br/>
+                      <i>".$indReviewTime."</i><br/>
+
                       ".$indReviewDescrip."
-                      </div>";
+                      </div>"; // end of review item
+
                     }// end of FOR loop
                   }// end of IF loop
                   else{
@@ -302,10 +336,12 @@
                 </div>  <!--end of reviews list -->
               </div>  <!--end of reviews section -->
               ";
-            }
-      }
-    ?>
-
+?>
   </div> <!--end of reviews section -->
 </body>
 </html>
+<script>
+    if ( window.history.replaceState ) {
+        window.history.replaceState( null, null, window.location.href );
+    }
+</script>

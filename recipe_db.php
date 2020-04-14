@@ -32,11 +32,8 @@ function saveRecipe($username, $recipe)
    } else {
       $query = "DELETE FROM favorites WHERE favorites.username = '$username' AND favorites.RecipeId = '$recipe'";
    }
-
-   
    $statement = $conn->prepare($query); 
    $statement->execute();
-
    // closes the cursor and frees the connection to the server so other SQL statements may be issued 
    $statement->conn = null;
 }

@@ -1,4 +1,3 @@
-<!-- Selinie Wang (jw6qe), Helen Lin (hl5ec), Jenny Yao (jy7eq) -->
 <?php
   // include 'dbConnection.inc.php'
   session_start();
@@ -13,7 +12,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link rel="stylesheet" href="homePage.css">
   <meta name="authors" content="Jenny Yao, Selinie Wang, Helen Lin">
-  <title>Reciplz</title>
+  <title>Cooking For College</title>
   <script type="text/javascript">
     /* function setFocus - sets the focus on the page to the search box when the home page is loaded*/
     function setFocus() {
@@ -31,7 +30,7 @@
   <header>
     <!-- navigation bar on the top left -->
     <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
-    <img class="navbar-brand" height="30px" href="#" src="https://i.imgur.com/9wVzybw.jpg">
+      <a class="navbar-brand" href="#">LOGO</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -45,10 +44,7 @@
             <a class="nav-link" href="#">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="profile.php">Profile</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="logout.php">Logout</a>
+            <a class="nav-link" href="#">Profile</a>
           </li>
         </ul>
       </div>
