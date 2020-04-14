@@ -16,6 +16,15 @@ while($row = mysqli_fetch_array($result)) {
     $descr =  $row['Description'];
 }
 
+$sql2 =    'SELECT *
+           FROM Users
+           JOIN favorites
+             ON Users.Username = favorites.username
+           WHERE UserID = '. $_SESSION['id'];
+$result2 = $conn->query($sql2);
+while($row = mysqli_fetch_array($result2)) {
+    $rname = $row['RecipeId'];
+}
 
 $conn->close();
 ?>
@@ -106,7 +115,7 @@ $conn->close();
                             <p style="margin-top: 40px; color: #fd455c;">Saved Recipes:</p>
                         </b>
                         <div style="padding-left: 15px;">
-                            <p><?php echo $_SESSION['Favorites'];?></p>
+                            <p><?php echo $rname;?></p>
                         </div>
                     </div>
                 </div>
