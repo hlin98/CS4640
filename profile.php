@@ -9,6 +9,7 @@ $dbname = "Reciplz";
 
 $conn = mysqli_connect($server, $username, $password, $dbname);
 
+// Display description from Users table
 $sql = 'SELECT * FROM Users WHERE UserID =  '.$_SESSION['id'].'';
 $result = $conn->query($sql);
 
@@ -16,6 +17,7 @@ while($row = mysqli_fetch_array($result)) {
     $descr =  $row['Description'];
 }
 
+// Join two tables to display the RecipeID after it is saved
 $sql2 = 'SELECT * FROM Users JOIN favorites ON Users.Username = favorites.username 
            WHERE UserID = '. $_SESSION['id'];
 $result2 = $conn->query($sql2);
@@ -23,16 +25,6 @@ $userarr1 = array();
 while($row = mysqli_fetch_array($result2)) {
     array_push($userarr1, $row['RecipeId']);
 }
-
-/*
-$sql3 = "SELECT * FROM Users JOIN favorites ON Users.Username = favorites.username
-   JOIN Recipes ON favorites.UserId = Recipes.UserId WHERE UserID = '". $_SESSION['id']."'";
-$result3 = mysqli_query($conn, $sql3);
-while($row = $result3->fetch_assoc()) {
-    $drname =  $row['RecipeName'];
-}
-echo $drname;
-*/
 
 $conn->close();
 ?>
@@ -90,6 +82,7 @@ $conn->close();
             </div>
         </nav>
 
+        <!-- Profile Code -->
         <div align="center">
             <div align="left" class="profilebox"
                 style="margin-top: 30px; width: 1000px; padding: 20px; flex-direction: row; display: flex; justify-content: space-between;">

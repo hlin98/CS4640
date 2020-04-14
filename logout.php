@@ -1,3 +1,5 @@
+<!-- Selinie Wang (jw6qe), Helen Lin (hl5ec), Jenny Yao (jy7eq) -->
+
 <?php
 // Initialize the session
 session_start();
