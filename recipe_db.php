@@ -1,3 +1,4 @@
+<!-- Helen Lin (hl5ec), Jenny Yao (jy7eq), Selinie Wang (jw6qe)-->
 <?php 
 $server = "localhost";
 $username = "root";
