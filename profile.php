@@ -1,5 +1,5 @@
 <!-- Selinie Wang (jw6qe), Helen Lin (hl5ec), Jenny Yao (jy7eq) -->
-<?php 
+<?php
 session_start();
 
 $server = "localhost";
@@ -62,9 +62,6 @@ $conn->close();
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Search</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="profile.php">Profile<span class="sr-only">(current)</span></a>
