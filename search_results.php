@@ -1,5 +1,5 @@
 <!-- Helen Lin (hl5ec), Jenny Yao (jy7eq), Selinie Wang (jw6qe)-->
-<?php 
+<?php
 //   require('dbconnection.inc.php');
 require('recipe_db.php');
 $server = "localhost";
@@ -37,16 +37,13 @@ session_start();
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-              <a class="nav-link" href="homePage.html">Home<span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="homePage.php">Home<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">About</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Search</a>
-              </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Profile</a>
+                <a class="nav-link" href="profile.php">Profile</a>
               </li>
           </ul>
         </div>
@@ -90,9 +87,9 @@ session_start();
             // --------- FILTER ----------
             $filterClause = array();
             if (! empty($_GET['prepTime'])) $filterClause[] ="prepTime<=".mysqli_real_escape_string($conn, $_GET['prepTime'])."";
-            if (! empty($_GET['difficulty'])) $filterClause[] ="difficulty='".mysqli_real_escape_string($conn, $_GET['difficulty'])."'"; 
-            $filter = ''; 
-            if (count($filterClause) > 0) { $filter = "AND ".implode(' AND ',$filterClause); } 
+            if (! empty($_GET['difficulty'])) $filterClause[] ="difficulty='".mysqli_real_escape_string($conn, $_GET['difficulty'])."'";
+            $filter = '';
+            if (count($filterClause) > 0) { $filter = "AND ".implode(' AND ',$filterClause); }
             $search = mysqli_real_escape_string($conn, $_GET['search']);
             $sql = "SELECT * FROM Recipes WHERE RecipeName LIKE '%$search%' " .$filter." ";
             $result = mysqli_query($conn, $sql);
@@ -140,7 +137,7 @@ session_start();
                                 <div style='float: right; margin-right: 10px;''>";
                                 echo "
                                 <form method='POST'>
-                                    <input name='save' type='submit' value='Save'</p> 
+                                    <input name='save' type='submit' value='Save'</p>
                                     <input type='hidden' name='id' value='$recipe_id'></p>
                                 </form>
                                 </div>
@@ -153,11 +150,11 @@ session_start();
             }
         }
     ?>
-      <?php  
+      <?php
         if (isset($_POST['submit-search'])){
           $filters = '';
           $search = mysqli_real_escape_string($conn, $_POST['search']);
-          $sql = "SELECT * FROM Recipes WHERE RecipeName LIKE '%$search%' OR 
+          $sql = "SELECT * FROM Recipes WHERE RecipeName LIKE '%$search%' OR
           Description LIKE '%$search%'";
           $result = mysqli_query($conn, $sql);
           $queryResult = mysqli_num_rows($result);

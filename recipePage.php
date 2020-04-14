@@ -172,7 +172,6 @@
 
 
               echo "
-              <button onClick='javascript:history.go(-1)'type='button' class='btn btn-primary'><< Go Back</button>
 
               <button onClick='window.print()'type='button' class='btn btn-secondary'>Print this page</button>
 
