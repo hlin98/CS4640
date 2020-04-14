@@ -1,5 +1,5 @@
 <!-- Helen Lin (hl5ec), Jenny Yao (jy7eq), Selinie Wang (jw6qe)-->
-<?php
+<?php 
 //   require('dbconnection.inc.php');
 require('recipe_db.php');
 $server = "localhost";
@@ -40,14 +40,14 @@ session_start();
               <a class="nav-link" href="homePage.php">Home<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
+                <a class="nav-link" href="profile.php">Profile</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="profile.php">Profile</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="logout.php">Logout</a>
-              </li>
+              <a class="nav-link" href="logout.php">Logout</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
           </ul>
         </div>
     </nav>
@@ -90,9 +90,9 @@ session_start();
             // --------- FILTER ----------
             $filterClause = array();
             if (! empty($_GET['prepTime'])) $filterClause[] ="prepTime<=".mysqli_real_escape_string($conn, $_GET['prepTime'])."";
-            if (! empty($_GET['difficulty'])) $filterClause[] ="difficulty='".mysqli_real_escape_string($conn, $_GET['difficulty'])."'";
-            $filter = '';
-            if (count($filterClause) > 0) { $filter = "AND ".implode(' AND ',$filterClause); }
+            if (! empty($_GET['difficulty'])) $filterClause[] ="difficulty='".mysqli_real_escape_string($conn, $_GET['difficulty'])."'"; 
+            $filter = ''; 
+            if (count($filterClause) > 0) { $filter = "AND ".implode(' AND ',$filterClause); } 
             $search = mysqli_real_escape_string($conn, $_GET['search']);
             $sql = "SELECT * FROM Recipes WHERE RecipeName LIKE '%$search%' " .$filter." ";
             $result = mysqli_query($conn, $sql);
@@ -101,7 +101,7 @@ session_start();
                 if(isset($_POST['id'])){
                     if (isset($_SESSION['username'])){
                         saveRecipe($_SESSION['username'], $_POST['id']);
-                        $is_saved = getSaved($_SESSION['username'], $_POST['id']);
+                        //$is_saved = getSaved($_SESSION['username'], $_POST['id']);
                     }else{
                         echo "Please login";
                     }
@@ -138,77 +138,25 @@ session_start();
                             </div>
                             <div class='col-sm'>
                                 <div style='float: right; margin-right: 10px;''>";
+                                
                                 echo "
                                 <form method='POST'>
-                                    <input name='save' type='submit' value='Save'</p>
-                                    <input type='hidden' name='id' value='$recipe_id'></p>
+                                    <input name='save' type='submit' value=";
+                                     echo getSaved($_SESSION['username'], $recipe_id) ? 'Save' : 'Saved';
+                                     echo "
+                                     <p><input type='hidden' name='id' value='$recipe_id'></p>
                                 </form>
                                 </div>
                             </div>
                         </div>
                     </div>";
                 }
+                
             }else{
                 echo "Oops, there are no recipes matching that search";
             }
         }
     ?>
-      <?php
-        if (isset($_POST['submit-search'])){
-          $filters = '';
-          $search = mysqli_real_escape_string($conn, $_POST['search']);
-          $sql = "SELECT * FROM Recipes WHERE RecipeName LIKE '%$search%' OR
-          Description LIKE '%$search%'";
-          $result = mysqli_query($conn, $sql);
-          $queryResult = mysqli_num_rows($result);
-
-          if ($queryResult > 0){
-            while ($row=mysqli_fetch_assoc($result)){
-                $recipe_id = $row['RecipeId'];    //link to specific recipe page
-                $avgRating = getAverageRating($recipe_id); // call function to get average
-                echo "
-                    <div class='card'>
-                        <div class='row'>
-                            <div class='col-sm'>
-                                <img class='card-img' src='".$row['imageLink']."' />
-                            </div>
-                            <div class='col-sm'>
-                                <a href='recipePage.php?id=$recipe_id' name='recipe' class='recipe-link'><h3>".$row['RecipeName']."</h3></a>
-                                <div>";
-                                if ($avgRating == 5){
-                                    for ($i=0; $i < $avgRating ; $i++) {
-                                        echo "<span class='fa fa-star checked'></span>";
-                                    };
-                                } else {
-                                    for ($i=0; $i < $avgRating ; $i++) {
-                                        echo "<span class='fa fa-star checked'></span>";
-                                    };
-                                    for ($i=0; $i < 5-$avgRating ; $i++) {
-                                        echo "<span class='fa fa-star'></span>";
-                                    };
-                                }
-                                echo "
-                                </div>
-                                <small>Recipe by Selinie Wang</small>
-                                <p>Prep time: ".$row['prepTime']." hour</p>
-                                <p>Level of difficulty: ".$row['difficulty']." </p>
-                            </div>
-                            <div class='col-sm'>
-                                <div style='float: right; margin-right: 10px;''>
-                                    <input onclick='change()' type='button' value='Save' id='saveBtn'></input>
-                                </div>
-                                <div style='float: right; margin-right: 10px;''>
-                                    <i>Dinner</i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>";
-            }
-        } else{
-              echo "Oops, there are no recipes matching your search!";
-            }
-        }
-      ?>
       <br>
       <p id="displayResults"></p>
   </div>
