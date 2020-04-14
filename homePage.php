@@ -60,7 +60,7 @@
     <div class="quote">
       <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
     </div>
-    <!-- search box -->
+    <!-- search box: send post info to search_results.php -->
     <form action="search_results.php" method="GET">
       <div class="form-group">
         <input type="text" class="form-control" id="search" name="search" placeholder="search" required/>
