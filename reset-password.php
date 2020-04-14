@@ -11,7 +11,7 @@ require_once "dbConnection.inc.php";
 $new_password = $confirm_password = "";
 $new_password_err = $confirm_password_err = "";
 
-// Validate form data
+// Validate form data for new password and confirm password
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     if(empty(trim($_POST["new_password"]))){
         $new_password_err = "Please enter the new password.";     
@@ -81,6 +81,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 </head>
 
 <body>
+    <!-- Reset Password Form -->
     <div align="center" class="loginbar">
         <div style="width: 400px; margin-top: 30px">
             <img width="400px" src="https://media.giphy.com/media/jtj1ESIdlNDzzccTIV/giphy.gif">
