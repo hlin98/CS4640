@@ -16,7 +16,7 @@ while($row = mysqli_fetch_array($result)) {
     $descr =  $row['Description'];
 }
 
-$sql2 = 'SELECT * FROM Users JOIN favorites ON Users.Username = favorites.username
+$sql2 = 'SELECT * FROM Users JOIN favorites ON Users.Username = favorites.username 
            WHERE UserID = '. $_SESSION['id'];
 $result2 = $conn->query($sql2);
 $userarr1 = array();
@@ -25,14 +25,15 @@ while($row = mysqli_fetch_array($result2)) {
 }
 
 /*
-$sql3 = 'SELECT * FROM Users JOIN favorites ON Users.Username = favorites.username
-   JOIN Recipes ON favorites.UserId = Recipes.UserId WHERE UserID = '. $_SESSION['id'];
-$result3 = $conn->query($sql3);
-while($row = mysqli_fetch_array($result3)) {
+$sql3 = "SELECT * FROM Users JOIN favorites ON Users.Username = favorites.username
+   JOIN Recipes ON favorites.UserId = Recipes.UserId WHERE UserID = '". $_SESSION['id']."'";
+$result3 = mysqli_query($conn, $sql3);
+while($row = $result3->fetch_assoc()) {
     $drname =  $row['RecipeName'];
 }
 echo $drname;
 */
+
 $conn->close();
 ?>
 
@@ -99,6 +100,7 @@ $conn->close();
                         src="https://vignette.wikia.nocookie.net/caramella-girls/images/9/99/Blankpfp.png/revision/latest?cb=20190122015011">
                     <div align="center" style="padding: 35px;">
                         <input class="file-upload" type="file" accept="image/*" />
+                        <!--
                         <div align="center"
                             style="display: flex; flex-direction: row; font-size: 12px; margin-top: 20px; justify-content: space-around;">
                             <img src="https://image.flaticon.com/icons/svg/61/61183.svg" width="20" height="20"
@@ -107,6 +109,7 @@ $conn->close();
                                 <p>Currently not following this user.</p>
                             </div>
                         </div>
+                        -->
                     </div>
                 </div>
                 <div style="background-color: white; width: 640px; padding-left: 35px; padding-right: 35px;">
@@ -115,8 +118,10 @@ $conn->close();
                     </b>
                     <div style="font-size: 12px;">
                         <p style="color:gray; text-align: justify;"><?php echo $descr; ?></p>
+                        <a href="update-description.php"><img align="right" style="width:13px" 
+                            src="https://image.flaticon.com/icons/svg/61/61112.svg"/></a>
                         <b>
-                            <p style="margin-top: 40px; color: #fd455c;">Saved Recipes:</p>
+                            <p style="margin-top: 50px; color: #fd455c;">Saved Recipes:</p>
                         </b>
                         <div style="padding-left: 15px;">
                             <p><?php 

@@ -86,7 +86,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <img width="400px" src="https://media.giphy.com/media/jtj1ESIdlNDzzccTIV/giphy.gif">
             <p></p>
             <div style="width: 360px; letter-spacing: 0.7px">
-                <a href="./login.php">
+                <a href="./profile.php">
                     <p align="right" style="font-size: 12px; color: #fd455c; margin-left: 100;">
                         Do not reset. Go back to user profile.</p></a>
                 <div align="left">
