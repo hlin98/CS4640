@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link rel="stylesheet" href="homePage.css">
   <meta name="authors" content="Jenny Yao, Selinie Wang, Helen Lin">
-  <title>Cooking For College</title>
+  <title>Reciplz</title>
   <script type="text/javascript">
     /* function setFocus - sets the focus on the page to the search box when the home page is loaded*/
     function setFocus() {
@@ -46,6 +46,9 @@
           <li class="nav-item">
             <a class="nav-link" href="#">Profile</a>
           </li>
+          <li class="nav-item">
+                <a class="nav-link" href="logout.php">Logout</a>
+              </li>
         </ul>
       </div>
     </nav>
@@ -64,7 +67,6 @@
       <!--submit button -->
       <div class="buttons">ie
         <button type="submit" class="btn btn-primary btn-lg" name="submit-search" id="searchBtn">Search</button>
-        <button type="button" class="btn btn-secondary btn-lg" >I'm Feeling Special</button>
       </div>
     </form>
 

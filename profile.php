@@ -15,6 +15,8 @@ $result = $conn->query($sql);
 while($row = mysqli_fetch_array($result)) {
     $descr =  $row['Description'];
 }
+
+
 $conn->close();
 ?>
 
