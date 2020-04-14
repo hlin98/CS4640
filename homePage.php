@@ -38,7 +38,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <a class="nav-link" href="homePage.html">Home<span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="homePage.php">Home<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">About</a>
@@ -60,13 +60,13 @@
       <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
     </div>
     <!-- search box -->
-    <form action="search_results.php" method="POST">
+    <form action="search_results.php" method="GET">
       <div class="form-group">
         <input type="text" class="form-control" id="search" name="search" placeholder="search" required/>
       </div>
       <!--submit button -->
       <div class="buttons">ie
-        <button type="submit" class="btn btn-primary btn-lg" name="submit-search" id="searchBtn">Search</button>
+        <button type="submit" class="btn btn-primary btn-lg" name="submit" id="searchBtn">Search</button>
       </div>
     </form>
 
