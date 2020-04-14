@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 14, 2020 at 07:28 PM
+-- Generation Time: Apr 14, 2020 at 07:49 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.2.29
 
@@ -43,7 +43,8 @@ INSERT INTO `favorites` (`username`, `RecipeId`) VALUES
 ('Selinie', 2),
 ('Selinie', 1),
 ('Selinie', 3),
-('Shirley', 1);
+('Shirley', 1),
+('Rose', 1);
 
 -- --------------------------------------------------------
 
@@ -157,7 +158,8 @@ INSERT INTO `Users` (`UserID`, `Username`, `Password`, `created_at`, `Descriptio
 (3, 'Jenny', '$2y$10$kwJBktCiXCo6DTU8YBSftO3CY2Mb28IWMOEnJsBXO8H6Gwd0h4GIy', '2020-04-11 19:47:40', 'Hello. My name is Jenny Yao. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nulla pellentesque dignissim enim sit amet venenatis urna cursus eget. Elementum eu facilisis sed odio morbi quis commodo odio aenean. Interdum velit laoreet id donec ultrices. Viverra nibh cras pulvinar mattis nunc sed.\r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nulla pellentesque dignissim enim sit amet venenatis urna cursus eget. Elementum eu facilisis sed odio morbi quis commodo odio aenean. Interdum velit laoreet id donec ultrices. Viverra nibh cras pulvinar mattis nunc sed.'),
 (4, 'Jessie', '$2y$10$CDPbnAYFbNoZ.1YVa1sSe.GUhKuFEMbigpe25QQHlnoQb2bOSIgmy', '2020-04-11 20:04:32', 'Hello. My name is Jessie Wang. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nulla pellentesque dignissim enim sit amet venenatis urna cursus eget. Elementum eu facilisis sed odio morbi quis commodo odio aenean. Interdum velit laoreet id donec ultrices. Viverra nibh cras pulvinar mattis nunc sed.\r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nulla pellentesque dignissim enim sit amet venenatis urna cursus eget. Elementum eu facilisis sed odio morbi quis commodo odio aenean. Interdum velit laoreet id donec ultrices. Viverra nibh cras pulvinar mattis nunc sed.'),
 (5, 'Lily', '$2y$10$30UUk14vRaa3xcC0E3xzCOK.CmR5CIG1osn/UR8rVKW91g2FVRpN2', '2020-04-11 21:36:44', 'Hello. My name is Lily Smith. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nulla pellentesque dignissim enim sit amet venenatis urna cursus eget. Elementum eu facilisis sed odio morbi quis commodo odio aenean. Interdum velit laoreet id donec ultrices. Viverra nibh cras pulvinar mattis nunc sed.\r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nulla pellentesque dignissim enim sit amet venenatis urna cursus eget. Elementum eu facilisis sed odio morbi quis commodo odio aenean. Interdum velit laoreet id donec ultrices. Viverra nibh cras pulvinar mattis nunc sed.'),
-(6, 'Shirley', '$2y$10$l8lfd.6x5yD3JfWnpLwPKOA1G1ws.jdaqJhfDlMDpcloaN2kgK6.a', '2020-04-13 23:02:02', 'Hello. My name is Shirley Temple. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nulla pellentesque dignissim enim sit amet venenatis urna cursus eget. Elementum eu facilisis sed odio morbi quis commodo odio aenean. Interdum velit laoreet id donec ultrices. Viverra nibh cras pulvinar mattis nunc sed.  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nulla pellentesque dignissim enim sit amet venenatis urna cursus eget. Elementum eu facilisis sed odio morbi quis commodo odio aenean. Interdum velit laoreet id donec ultrices. Viverra nibh cras pulvinar mattis nunc sed.');
+(6, 'Shirley', '$2y$10$l8lfd.6x5yD3JfWnpLwPKOA1G1ws.jdaqJhfDlMDpcloaN2kgK6.a', '2020-04-13 23:02:02', 'Hello. My name is Shirley Temple. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nulla pellentesque dignissim enim sit amet venenatis urna cursus eget. Elementum eu facilisis sed odio morbi quis commodo odio aenean. Interdum velit laoreet id donec ultrices. Viverra nibh cras pulvinar mattis nunc sed.  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nulla pellentesque dignissim enim sit amet venenatis urna cursus eget. Elementum eu facilisis sed odio morbi quis commodo odio aenean. Interdum velit laoreet id donec ultrices. Viverra nibh cras pulvinar mattis nunc sed.'),
+(7, 'Rose', '$2y$10$gJAA0ewIECGOWTW/gO2ci.bpnYP2KOsDA8qMA9mTR2XFERNDkJ/JW', '2020-04-14 13:42:38', 'Hello my name is Rose.');
 
 -- --------------------------------------------------------
 
@@ -239,7 +241,7 @@ ALTER TABLE `RecipesReviews`
 -- AUTO_INCREMENT for table `Users`
 --
 ALTER TABLE `Users`
-  MODIFY `UserID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `UserID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `userstest2`
