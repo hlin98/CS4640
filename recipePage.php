@@ -47,7 +47,7 @@
 </head>
 
 <body>
-    <!-- <header> -->
+    <!-- NAVBAR -->
   <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
         <a class="navbar-brand" href="homePage.php">LOGO</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -71,12 +71,12 @@
           </ul>
         </div>
       </nav>
-    <!-- </header> -->
+    <!-- NAVBAR end -->
 
   <div class="container">
   <!-- ASSUME FOR NOW USER CLICKS ON SALMON RECIPE -->
 <?php
-        // Section to get Overall Star Ratings for ReflectionProperty;
+        // Get info from Recipes Table where the RecipeID is equal to the recipe clicked on in the Recipe Results page
         $sql = 'SELECT * FROM Recipes WHERE RecipeID='. $_GET['id'];
         $result = mysqli_query($conn, $sql);
         $queryResult = mysqli_num_rows($result);
@@ -98,7 +98,7 @@
           }
 
 
-          // FUNCTION -- create an array of recipe's ingredients
+          // FUNCTION -- create an array of recipe's ingredients by parsing by ;
           $sql_4 = 'SELECT * FROM RecipesContent WHERE RecipeID='. $_GET['id'];
           $result_4 = mysqli_query($conn, $sql_4);
           while($row = mysqli_fetch_array($result_4)) {
@@ -107,7 +107,7 @@
           }
           // $ingred_array = explode(";", $result_4);
 
-          // FUNCTION -- create an array of recipe's directions
+          // FUNCTION -- create an array of recipe's directions by parsing by ;
           $sql_5 = 'SELECT * FROM RecipesContent WHERE RecipeID='. $_GET['id'];
           $result_5 = mysqli_query($conn, $sql_5);
           while($row = mysqli_fetch_array($result_5)) {
@@ -115,7 +115,7 @@
             $direc_array = explode(";", $stringDirec);
           }
 
-          // FUNCTION -- Recipe Reviews
+          // FUNCTION -- Recipe Reviews. Make a array for each column of recipe reviews
           $sql_6 =
           'SELECT *
            FROM RecipesReviews
@@ -137,7 +137,7 @@
             // echo "number of rows<br/>";
           }
 
-          // FUNCTION -- recipe creator
+          // FUNCTION -- Get the creator of the recipe
           $sql_7 =
           'SELECT Username
            FROM Recipes
@@ -149,7 +149,7 @@
               $userName = $row['Username'];
           };
 
-          // FUNCTION -- Saves
+          // FUNCTION -- Save Button
           if(isset($_POST['id'])){
               if (isset($_SESSION['username'])){
                   saveRecipe($_SESSION['username'], $_POST['id']);
@@ -161,7 +161,7 @@
 
           while ($row=mysqli_fetch_assoc($result)){
 
-            // FUNCTION -- difficulty of recipePage
+            // FUNCTION -- Gets the difficulty of recipePage
             $sql_3 = 'SELECT difficulty FROM Recipes WHERE RecipeID='. $_GET['id'];
             $result_3 = mysqli_query($conn, $sql_3);
 
@@ -171,7 +171,7 @@
               echo "
 
               <button onClick='window.print()'type='button' class='btn btn-secondary'>Print this page</button>
-
+              <!--Recipe Card-->
               <div class='card'>
                 <div class='row'>
                   <div class='col-sm'>
@@ -179,7 +179,7 @@
                   </div>
                   <div class='col-sm'>
                     <h3>".$row['RecipeName']."</h3>
-                    <div>";
+                    <div><!--Print out number of stars-->";
                       if ($avgRating == 5){
                         for ($i=0; $i < $avgRating ; $i++) {
                           echo "<span class='fa fa-star checked'></span>";
@@ -239,11 +239,11 @@
                 }
                 echo "</div>
               </div> <!--end of directions -->
-
+              <!--Review section start-->
               <div class='reviews'>
                 <h4 style='display: inline; float: left; margin-right: 10px;' class='subHead'>Reviews</h4>
                 <div style='display:inline; margin-right: 20px;'>";
-                // Stars
+                // Prints out number of avg stars
                 if ($avgRating == 5){
                   for ($i=0; $i < $avgRating ; $i++) {
                     echo "<span class='fa fa-star checked'></span>";
@@ -294,6 +294,7 @@
 
                   </div>
                   ";
+                  // Print out all of the reviews
                   if(count($reviewNameArr)!=0){
                     for ($i=0; $i < count($reviewNameArr); $i++) {
                       $indRating =$ratingArr[$i];
