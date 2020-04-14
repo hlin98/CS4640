@@ -1,3 +1,4 @@
+// <!-- Selinie Wang (jw6qe), Helen Lin (hl5ec), Jenny Yao (jy7eq) -->
 function change(){
     var card = document.querySelector('.card');
     var saveButton = document.getElementById("saveBtn");
