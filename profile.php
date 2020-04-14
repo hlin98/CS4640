@@ -16,16 +16,23 @@ while($row = mysqli_fetch_array($result)) {
     $descr =  $row['Description'];
 }
 
-$sql2 =    'SELECT *
-           FROM Users
-           JOIN favorites
-             ON Users.Username = favorites.username
+$sql2 = 'SELECT * FROM Users JOIN favorites ON Users.Username = favorites.username
            WHERE UserID = '. $_SESSION['id'];
 $result2 = $conn->query($sql2);
+$userarr1 = array();
 while($row = mysqli_fetch_array($result2)) {
-    $rname = $row['RecipeId'];
+    array_push($userarr1, $row['RecipeId']);
 }
 
+/*
+$sql3 = 'SELECT * FROM Users JOIN favorites ON Users.Username = favorites.username
+   JOIN Recipes ON favorites.UserId = Recipes.UserId WHERE UserID = '. $_SESSION['id'];
+$result3 = $conn->query($sql3);
+while($row = mysqli_fetch_array($result3)) {
+    $drname =  $row['RecipeName'];
+}
+echo $drname;
+*/
 $conn->close();
 ?>
 
@@ -73,9 +80,6 @@ $conn->close();
                         <a class="nav-link" href="#">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Search</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="profile.php">Profile<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
@@ -115,7 +119,11 @@ $conn->close();
                             <p style="margin-top: 40px; color: #fd455c;">Saved Recipes:</p>
                         </b>
                         <div style="padding-left: 15px;">
-                            <p><?php echo $rname;?></p>
+                            <p><?php 
+                            for ($i=0; $i < count($userarr1); $i++) {
+                                echo "$userarr1[$i]<br>";
+                            }
+                            ?></p>
                         </div>
                     </div>
                 </div>
